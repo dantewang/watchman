@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'io.dante'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'io.dante.watchman.Watchman'
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.36.0.2'
+    implementation 'io.javalin:javalin:4.1.1'
+    implementation 'org.snakeyaml:snakeyaml-engine:2.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
