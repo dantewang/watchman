@@ -1,14 +1,14 @@
 monitor:
   monitor1:
     target:
-      socket:
-        host: 127.0.0.1
-        port: 22
-        timeout: 60000
+      type: socket
+      host: 127.0.0.1
+      port: 22
+      timeout: 60000
     action:
-      slack:
+      - type: slack
         webhook: https://hooks.slack.com/services/T1234567/AAAAAAAA/ZZZZZZ
-      http:
+      - type: http
         url: https://dante.io
     trigger:
       on: dead
