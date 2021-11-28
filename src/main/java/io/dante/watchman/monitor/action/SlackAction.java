@@ -16,11 +16,13 @@ public class SlackAction implements Action {
 	}
 
 	@Override
-	public void execute(Result result) throws Exception {
-		Slack slack = Slack.getInstance();
+	public String execute(Result result) throws Exception {
+		var slack = Slack.getInstance();
 
-		WebhookResponse webhookResponse = slack.send(
+		var webhookResponse = slack.send(
 			_webhook, WebhookPayloads.payload(payload -> payload.text(result.message())));
+
+		return webhookResponse.toString();
 	}
 
 	private final String _webhook;

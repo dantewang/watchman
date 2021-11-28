@@ -7,6 +7,6 @@ import io.dante.watchman.monitor.Result;
  */
 public interface Action {
 
-	void execute(Result result) throws Exception;
+	String execute(Result result) throws Exception;
 
 }

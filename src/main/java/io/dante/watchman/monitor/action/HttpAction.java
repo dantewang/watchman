@@ -8,7 +8,8 @@ import io.dante.watchman.monitor.Result;
 public class HttpAction implements Action {
 
 	@Override
-	public void execute(Result result) {
+	public String execute(Result result) {
+		return null;
 	}
 
 }
