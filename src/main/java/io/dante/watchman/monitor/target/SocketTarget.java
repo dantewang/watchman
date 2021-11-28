@@ -1,10 +1,10 @@
 package io.dante.watchman.monitor.target;
 
-import io.dante.watchman.monitor.Result;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+
+import io.dante.watchman.monitor.Result;
 
 /**
  * @author Dante Wang
@@ -19,12 +19,8 @@ public class SocketTarget extends BaseTarget {
 
 	@Override
 	public Result check() {
-		Socket socket = new Socket();
-
-		try {
+		try (var socket = new Socket()) {
 			socket.connect(_inetSocketAddress, timeout);
-
-			socket.close();
 
 			return Result.live("Successfully connected to [" + _inetSocketAddress + "]");
 		}
