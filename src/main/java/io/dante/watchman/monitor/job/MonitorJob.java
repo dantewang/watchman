@@ -3,15 +3,15 @@ package io.dante.watchman.monitor.job;
 import io.dante.watchman.monitor.action.Action;
 import io.dante.watchman.monitor.target.Target;
 
+import java.util.List;
+
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
-
-import java.util.List;
 
 /**
  * @author Dante Wang
  */
-public class Monitor implements Job {
+public class MonitorJob implements Job {
 
 	public static final String ACTIONS = "actions";
 
