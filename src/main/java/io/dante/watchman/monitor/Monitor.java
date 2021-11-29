@@ -1,7 +1,44 @@
 package io.dante.watchman.monitor;
 
+import io.dante.watchman.monitor.action.Action;
+import io.dante.watchman.monitor.target.Target;
+
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+
+import java.util.List;
+
 /**
  * @author Dante Wang
  */
-public class Monitor {
+public class Monitor implements Job {
+
+	public static final String ACTIONS = "actions";
+
+	public static final String TARGET = "target";
+
+	@Override
+	public void execute(JobExecutionContext jobExecutionContext) {
+		var target = (Target)jobExecutionContext.get(TARGET);
+
+		var actions = (List<Action>)jobExecutionContext.get(ACTIONS);
+
+		var sb = new StringBuilder();
+
+		var result = target.check();
+
+		sb.append(result.status()).append(" -> ").append(result.message()).append("\n");
+
+		for (Action action : actions) {
+			try {
+				sb.append(action.execute(result)).append("\n");
+			}
+			catch (Exception exception) {
+				sb.append(exception.getMessage());
+			}
+		}
+
+		jobExecutionContext.setResult(sb.toString());
+	}
+
 }
