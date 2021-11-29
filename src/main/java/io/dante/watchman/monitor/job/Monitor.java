@@ -1,4 +1,4 @@
-package io.dante.watchman.monitor;
+package io.dante.watchman.monitor.job;
 
 import io.dante.watchman.monitor.action.Action;
 import io.dante.watchman.monitor.target.Target;
