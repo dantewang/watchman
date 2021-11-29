@@ -1,16 +1,18 @@
-monitor:
-  monitor1:
+monitors:
+  - name: "monitor1"
     target:
-      type: socket
-      host: 127.0.0.1
+      type: "socket"
+      host: "127.0.0.1"
       port: 22
       timeout: 60000
-    action:
-      - type: slack
-        on: dead
-        webhook: https://hooks.slack.com/services/T1234567/AAAAAAAA/ZZZZZZ
-      - type: http
-        on: dead
-        url: https://dante.io
+    actions:
+      - type: "slack"
+        status: "dead"
+        params:
+          webhook: "https://hooks.slack.com/services/T1234567/AAAAAAAA/ZZZZZZ"
+      - type: "http"
+        status: "dead"
+        params:
+          url: "https://dante.io"
     trigger:
       cron: "0 0/20 * 1/1 * ? *"

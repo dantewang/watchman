@@ -31,7 +31,7 @@ public class MonitorJob implements Job {
 
 		for (var action : actions) {
 			try {
-				sb.append(action.on(targetResult)).append("\n");
+				sb.append(action.onResult(targetResult)).append("\n");
 			}
 			catch (Exception exception) {
 				sb.append(exception.getMessage());
