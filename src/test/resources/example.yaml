@@ -7,9 +7,10 @@ monitor:
       timeout: 60000
     action:
       - type: slack
+        on: dead
         webhook: https://hooks.slack.com/services/T1234567/AAAAAAAA/ZZZZZZ
       - type: http
+        on: dead
         url: https://dante.io
     trigger:
-      on: dead
       cron: "0 0/20 * 1/1 * ? *"

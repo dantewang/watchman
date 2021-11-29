@@ -8,14 +8,16 @@ import io.dante.watchman.monitor.target.TargetResult;
 /**
  * @author Dante Wang
  */
-public class SlackAction implements Action {
+public class SlackAction extends BaseAction {
 
-	public SlackAction(String webhook) {
+	public SlackAction(String on, String webhook) {
+		super(on);
+
 		_webhook = webhook;
 	}
 
 	@Override
-	public String on(TargetResult targetResult) throws Exception {
+	protected String doAction(TargetResult targetResult) throws Exception {
 		var slack = Slack.getInstance();
 
 		var webhookResponse = slack.send(

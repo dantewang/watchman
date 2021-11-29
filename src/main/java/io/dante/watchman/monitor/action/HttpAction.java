@@ -5,10 +5,14 @@ import io.dante.watchman.monitor.target.TargetResult;
 /**
  * @author Dante Wang
  */
-public class HttpAction implements Action {
+public class HttpAction extends BaseAction {
+
+	public HttpAction(String on, String url) {
+		super(on);
+	}
 
 	@Override
-	public String on(TargetResult targetResult) {
+	protected String doAction(TargetResult targetResult) throws Exception {
 		return null;
 	}
 
