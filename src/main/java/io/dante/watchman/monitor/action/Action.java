@@ -1,12 +1,12 @@
 package io.dante.watchman.monitor.action;
 
-import io.dante.watchman.monitor.Result;
+import io.dante.watchman.monitor.target.TargetResult;
 
 /**
  * @author Dante Wang
  */
 public interface Action {
 
-	String execute(Result result) throws Exception;
+	String on(TargetResult targetResult) throws Exception;
 
 }

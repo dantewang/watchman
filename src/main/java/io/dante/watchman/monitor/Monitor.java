@@ -25,13 +25,13 @@ public class Monitor implements Job {
 
 		var sb = new StringBuilder();
 
-		var result = target.check();
+		var targetResult = target.probe();
 
-		sb.append(result.status()).append(" -> ").append(result.message()).append("\n");
+		sb.append(targetResult.status()).append(" -> ").append(targetResult.message()).append("\n");
 
 		for (Action action : actions) {
 			try {
-				sb.append(action.execute(result)).append("\n");
+				sb.append(action.on(targetResult)).append("\n");
 			}
 			catch (Exception exception) {
 				sb.append(exception.getMessage());

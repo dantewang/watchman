@@ -1,6 +1,6 @@
 package io.dante.watchman.monitor.action;
 
-import io.dante.watchman.monitor.Result;
+import io.dante.watchman.monitor.target.TargetResult;
 
 /**
  * @author Dante Wang
@@ -8,7 +8,7 @@ import io.dante.watchman.monitor.Result;
 public class HttpAction implements Action {
 
 	@Override
-	public String execute(Result result) {
+	public String on(TargetResult targetResult) {
 		return null;
 	}
 
