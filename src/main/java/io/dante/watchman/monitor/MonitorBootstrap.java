@@ -7,7 +7,13 @@ import io.dante.watchman.monitor.config.Monitor;
 import io.dante.watchman.monitor.job.MonitorJob;
 import io.dante.watchman.monitor.target.TargetFactory;
 
-import org.quartz.*;
+import org.quartz.CronScheduleBuilder;
+import org.quartz.JobBuilder;
+import org.quartz.JobDataMap;
+import org.quartz.JobDetail;
+import org.quartz.SchedulerException;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
 import java.util.ArrayList;
