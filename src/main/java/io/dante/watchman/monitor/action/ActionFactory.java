@@ -1,5 +1,7 @@
 package io.dante.watchman.monitor.action;
 
+import io.dante.watchman.monitor.config.ActionConfig;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -9,13 +11,13 @@ import java.util.function.Function;
  */
 public class ActionFactory {
 
-	public static Action create(io.dante.watchman.monitor.config.Action actionConfig) {
+	public static Action create(ActionConfig actionConfig) {
 		var builderFunction = _actionBuilders.get(actionConfig.getType());
 
 		return builderFunction.apply(actionConfig);
 	}
 
-	private static final Map<String, Function<io.dante.watchman.monitor.config.Action, Action>> _actionBuilders =
+	private static final Map<String, Function<ActionConfig, Action>> _actionBuilders =
 		new HashMap<>();
 
 	static {

@@ -3,6 +3,7 @@ package io.dante.watchman.monitor.action;
 import com.slack.api.Slack;
 import com.slack.api.webhook.WebhookPayloads;
 
+import io.dante.watchman.monitor.config.ActionConfig;
 import io.dante.watchman.monitor.target.TargetResult;
 
 import java.util.Map;
@@ -14,7 +15,7 @@ public class SlackAction extends BaseAction {
 
 	public static final String NAME = "slack";
 
-	public static SlackAction from(io.dante.watchman.monitor.config.Action actionConfig) {
+	public static SlackAction from(ActionConfig actionConfig) {
 		Map<String, String> params = actionConfig.getParams();
 
 		return new SlackAction(actionConfig.getStatus(), params.get("webhook"));

@@ -1,9 +1,10 @@
 package io.dante.watchman.monitor.target;
 
+import io.dante.watchman.monitor.config.TargetConfig;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.util.Map;
 
 /**
  * @author Dante Wang
@@ -12,7 +13,7 @@ public class SocketTarget extends BaseTarget {
 
 	public static final String NAME = "socket";
 
-	public static SocketTarget from(io.dante.watchman.monitor.config.Target targetConfig) {
+	public static SocketTarget from(TargetConfig targetConfig) {
 		return new SocketTarget(targetConfig.getHost(), targetConfig.getPort(), targetConfig.getTimeout());
 	}
 

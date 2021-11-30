@@ -3,7 +3,7 @@ package io.dante.watchman.monitor;
 import io.dante.watchman.monitor.action.Action;
 import io.dante.watchman.monitor.action.ActionFactory;
 import io.dante.watchman.monitor.config.ConfigHandler;
-import io.dante.watchman.monitor.config.Monitor;
+import io.dante.watchman.monitor.config.MonitorConfig;
 import io.dante.watchman.monitor.job.MonitorJob;
 import io.dante.watchman.monitor.target.TargetFactory;
 
@@ -38,7 +38,7 @@ public class MonitorBootstrap {
 		scheduler.start();
 	}
 
-	private Trigger _buildTrigger(Monitor monitorConfig) {
+	private Trigger _buildTrigger(MonitorConfig monitorConfig) {
 		var triggerConfig = monitorConfig.getTrigger();
 
 		return TriggerBuilder.newTrigger().withIdentity(
@@ -48,7 +48,7 @@ public class MonitorBootstrap {
 		).build();
 	}
 
-	private JobDetail _buildJob(Monitor monitorConfig) {
+	private JobDetail _buildJob(MonitorConfig monitorConfig) {
 		var target = TargetFactory.create(monitorConfig.getTarget());
 
 		var actions = new ArrayList<Action>();

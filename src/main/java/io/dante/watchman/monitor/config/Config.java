@@ -7,14 +7,14 @@ import java.util.List;
  */
 public class Config {
 
-	public List<Monitor> getMonitors() {
+	public List<MonitorConfig> getMonitors() {
 		return _monitors;
 	}
 
-	public void setMonitors(List<Monitor> monitors) {
+	public void setMonitors(List<MonitorConfig> monitors) {
 		_monitors = monitors;
 	}
 
-	private List<Monitor> _monitors;
+	private List<MonitorConfig> _monitors;
 
 }

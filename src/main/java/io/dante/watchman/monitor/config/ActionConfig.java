@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * @author Dante Wang
  */
-public class Action {
+public class ActionConfig {
 
 	public String getStatus() {
 		return _status;

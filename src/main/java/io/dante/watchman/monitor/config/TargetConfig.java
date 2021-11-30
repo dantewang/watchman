@@ -3,7 +3,7 @@ package io.dante.watchman.monitor.config;
 /**
  * @author Dante Wang
  */
-public class Target {
+public class TargetConfig {
 
 	public String getHost() {
 		return _host;
