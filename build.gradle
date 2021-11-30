@@ -15,8 +15,6 @@ application {
 }
 
 dependencies {
-    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
-    implementation 'io.javalin:javalin:4.1.1'
     implementation 'org.quartz-scheduler:quartz:2.3.2'
     implementation 'com.slack.api:slack-api-client:1.14.0'
     implementation 'org.yaml:snakeyaml:1.29'
