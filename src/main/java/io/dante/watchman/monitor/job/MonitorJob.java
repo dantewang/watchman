@@ -18,6 +18,7 @@ public class MonitorJob implements Job {
 	public static final String TARGET = "target";
 
 	@Override
+	@SuppressWarnings(value = "unchecked")
 	public void execute(JobExecutionContext jobExecutionContext) {
 		var target = (Target)jobExecutionContext.get(TARGET);
 
