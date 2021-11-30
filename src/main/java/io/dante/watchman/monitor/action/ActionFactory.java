@@ -19,6 +19,7 @@ public class ActionFactory {
 		new HashMap<>();
 
 	static {
+		_actionBuilders.put(EchoAction.NAME, actionConfig -> new EchoAction());
 		_actionBuilders.put(HttpAction.NAME, HttpAction::from);
 		_actionBuilders.put(SlackAction.NAME, SlackAction::from);
 	}
