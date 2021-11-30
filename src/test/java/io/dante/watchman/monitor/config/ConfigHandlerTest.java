@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ConfigHandlerTest {
 
 	@Test
-	public void testLoadConfig() throws IOException {
+	public void testLoadConfig() {
 		var classLoader = ConfigHandlerTest.class.getClassLoader();
 
 		var configHandler = ConfigHandler.instance();
@@ -19,10 +19,6 @@ public class ConfigHandlerTest {
 		var inputStream = classLoader.getResourceAsStream("example.yaml");
 
 		configHandler.loadConfig(inputStream);
-
-		var config = configHandler.getConfig();
-
-		System.out.println("tested");
 	}
 
 }
