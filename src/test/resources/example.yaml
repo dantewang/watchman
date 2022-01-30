@@ -14,5 +14,10 @@ monitors:
         status: "dead"
         params:
           url: "https://dante.io"
+      - type: "telegrambot"
+        status: "dead"
+        params:
+          token: 123456:ABC-DEF
+          chatId: 123456
     trigger:
       cron: "0 0/20 * 1/1 * ? *"
