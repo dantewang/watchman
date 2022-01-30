@@ -22,7 +22,6 @@ public class ActionFactory {
 
 	static {
 		_actionBuilders.put(EchoAction.NAME, actionConfig -> new EchoAction());
-		_actionBuilders.put(HttpAction.NAME, HttpAction::from);
 		_actionBuilders.put(SlackAction.NAME, SlackAction::from);
 		_actionBuilders.put(TelegramBotAction.NAME, TelegramBotAction::from);
 	}

@@ -10,10 +10,6 @@ monitors:
         status: "dead"
         params:
           webhook: "https://hooks.slack.com/services/T1234567/AAAAAAAA/ZZZZZZ"
-      - type: "http"
-        status: "dead"
-        params:
-          url: "https://dante.io"
       - type: "telegrambot"
         status: "dead"
         params:
