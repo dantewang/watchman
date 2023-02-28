@@ -17,7 +17,7 @@ application {
 dependencies {
     implementation 'org.quartz-scheduler:quartz:2.3.2'
     implementation 'com.slack.api:slack-api-client:1.27.1'
-    implementation 'org.yaml:snakeyaml:1.33'
+    implementation 'org.yaml:snakeyaml:2.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.1'
